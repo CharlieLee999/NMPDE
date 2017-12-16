@@ -102,9 +102,8 @@ while tau_sum <= T:
 
 
 
-    u_n_new[1:-1] = (1.0 - tau/h * c_i_plus[1:-1] + c_i_minus[1:-1]) * u_n[1:-1] + tau/h * (c_i_plus[1:-1] * u_n[2:] + c_i_minus[1:-1] * u_n[0:-2] )
-#    for i in range(1, N-1):
-#        u_n_new[i] = (1.0 - tau/h * (c_i_plus[i] + c_i_minus[i])) * u_n[i] + tau/h * (c_i_plus[i] * u_n[i+1] + c_i_minus[i] * u_n[i-1])
+    for i in range(1, N-1):
+        u_n_new[i] = (1.0 - tau/h * (c_i_plus[i] + c_i_minus[i])) * u_n[i] + tau/h * (c_i_plus[i] * u_n[i+1] + c_i_minus[i] * u_n[i-1])
     
     u_n_new[0] = (1.0 - tau/h * (c_i_plus[0] + c_i_minus[0])) * u_n[0] + tau/h * (c_i_plus[0] * u_n[1] + c_i_minus[0] * u_n[N-1])
     
