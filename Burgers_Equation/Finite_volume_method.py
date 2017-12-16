@@ -70,8 +70,8 @@ while tau_sum <= T:
     
     
     ### Calculate alpha(i + 1/2) and alpha(i - 1/2)
-    alpha_i_plus  = abs(a_i_plus)
-    alpha_i_minus = abs(a_i_minus)
+    alpha_i_plus  = alpha_coeff * abs(a_i_plus)
+    alpha_i_minus = alpha_coeff * abs(a_i_minus)
     
     c_i_plus    = 0.5 * (alpha_i_plus - a_i_plus)
     c_i_minus   = 0.5 * (alpha_i_minus + a_i_minus)
