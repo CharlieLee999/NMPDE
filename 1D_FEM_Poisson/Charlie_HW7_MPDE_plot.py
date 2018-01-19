@@ -39,3 +39,13 @@ fig.text(0.5, 1, '$u(x)$ and $e(x)$ under Different grids', \
          horizontalalignment = 'center', fontsize=16)
 
 fig.savefig('u_x_e_x_2_grids.png', format = 'png')
+
+n_in = 1000
+df  = pd.read_csv(title_file + str(n_in) + '.csv', sep = ',', header = None, error_bad_lines=False)
+data = df.values[1:, 1:]
+plt.figure()
+plt.plot(data[0, :], data[3, :] )
+plt.xlabel('$x$')
+plt.ylabel('$e(x)$')
+plt.title('Approximation errors N = ' + str(n_in))
+plt.savefig('Approximation_errors_N_' + str(n_in) + '.png', format = 'png')
